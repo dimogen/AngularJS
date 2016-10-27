@@ -1,0 +1,26 @@
+<html ng-app="HelloApp">
+<head>
+    <script src='libreries/angular.js'></script>
+    <script>
+        //Модель
+        var model="Hello";
+        //Модуль
+        var HelloApp=angular.module("HelloApp",[]);
+        //Контроллер
+        HelloApp.controller("HelloAppCtrl",function($scope){
+            $scope.message=model;
+
+            $scope.clickHandler=function(){
+                $scope.message=$scope.text;
+            }
+        });
+
+    </script>    
+</head>
+<body ng-controller="HelloAppCtrl">
+    <h1>{{ message }}</h1>
+    <input ng-model="text">
+    <button ng-click="clickHandler();">Обновить</button>
+</body>
+
+</html>
